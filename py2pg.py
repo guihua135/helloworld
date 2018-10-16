@@ -22,9 +22,11 @@ print("insert data successfully")
 
 """
 
-cur.execute("select id, name, age, address, salary from company")
+cur.execute("select id, name, age, address, salary from company FOR UPDATE")
 rows = cur.fetchall()
 for row in rows:
+    if str(row[1]) == 'Allen':
+        cur.execute("update company set salary = 20000 where name = 'Allen'")
     print(str(row[0])+";"+row[1]+";"+str(row[2])+";"+row[3]+";"+str(row[4]))
 
 
