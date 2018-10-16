@@ -29,6 +29,6 @@ for row in rows:
         cur.execute("update company set salary = 20000 where name = 'Allen'")
     print(str(row[0])+";"+row[1]+";"+str(row[2])+";"+row[3]+";"+str(row[4]))
 
-
+#测试一下提交
 #conn.commit()
 conn.close()
